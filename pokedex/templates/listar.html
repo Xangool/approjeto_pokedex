@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block conteudo %}
+
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         {% for pokemon in todos_pokemons %}
         <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-            <a href="#"><img src="{{pokemon.imagem.url}}" width="220" height="400" class="d-block w-100"
+            <a href="{% url 'pokedex:um_pokemon' idpokemon=pokemon.id %}"><img src="{{pokemon.imagem.url}}" width="220" height="400" class="d-block w-100"
                  alt="..."></a>
         </div>
         {%endfor%}
@@ -18,26 +20,45 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-    <table class="table table-hover">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Altura</th>
-            <th>Velocidade</th>
-            <th>Categoria</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for objeto in todos_pokemons %}
+
+<td>
+        {% for pokemon in todos_pokemons %}
+            <a href="{% url 'pokedex:um_pokemon' idpokemon=pokemon.id %}">
             <tr scope="row">
-                <td>{{ objeto.id }}</td>
-                <td>{{ objeto.nome }}</td>
-                <td>{{ objeto.altura }}</td>
-                <td>{{ objeto.velocidade }}</td>
-                <td>{{ objeto.fk_categoria.nome }}{{ objeto.ataque }}</td>
+                <button type="button" class="btn btn-outline-primary">
+                        <font size=5" color="black"><div align="left">{{ pokemon.id }}</div></font>
+                <td align="center">
+                    <font size="8" color="black">{{ pokemon.nome }}</font>
+                </td>
+                <td align="center">
+                    <img src="{{ pokemon.imagem.url }}" height="250" width="250">
+                </td>
+                </button>
             </tr>
+            </a>
         {% endfor %}
-        </tbody>
-    </table>
+</td>
+
+<div class="card" style="width: 15rem;">
+  <div class="card-body">
+    <td>
+        {% for pokemon in todos_pokemons %}
+            <a href="{% url 'pokedex:um_pokemon' idpokemon=pokemon.id %}">
+            <tr scope="row">
+                <font size=5" color="black"><div align="left">{{ pokemon.id }}</div></font>
+                <td align="center">
+                    <font size="8" color="black">{{ pokemon.nome }}</font>
+                </td>
+                <td align="center">
+                    <img src="{{ pokemon.imagem.url }}" height="250" width="250">
+                </td>
+            </tr>
+            </a>
+        {% endfor %}
+</td>
+  </div>
+</div>
+
+
+
 {% endblock %}

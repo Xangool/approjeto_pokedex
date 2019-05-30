@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h5>
+
+</h5>
+
+
+<div class="card" style="width: 18rem;">
+  <img src="{{um_pokemon.imagem.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ um_pokemon.nome }}</h5>
+    <p class="card-text"> {{um_pokemon.altura}}</p>
+    <a href="{% url 'pokedex:todos_pokemons' %}">
+    <button type="button" class="btn btn-primary">Voltar</button>
+    </a>
+  </div>
+</div>
+{% endblock %}

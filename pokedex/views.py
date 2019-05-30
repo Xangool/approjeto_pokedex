@@ -13,3 +13,12 @@ def listarPokemons (request):
     }
 
     return render(request,'listar.html', contexto)
+
+def umPokemon (request, idpokemon=None):
+    pokemon = Pokemon.objects.get(id=idpokemon)
+
+    contexto = {
+        "um_pokemon" : pokemon
+    }
+
+    return render(request,'um_pokemon.html', contexto)
