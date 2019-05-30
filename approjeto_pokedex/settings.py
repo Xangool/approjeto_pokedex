@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')&o#bd*j&gh8e_u-pwj(-$bi)(t==ugw$fl0i4qdi!^j#dca(w'
+SECRET_KEY = 'jsey$5hgtf65txea)xe75e2f$+l=y#gchc#c3*))flgsg2w)e7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pokedex'
+    'pokedex',
 ]
 
 MIDDLEWARE = [
@@ -121,4 +121,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = 'midias/'
-MEDIA_URL = '/arquivos/'
+MEDIA_URL = '/anexos/'

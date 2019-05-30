@@ -31,7 +31,6 @@ class Tipo (models.Model):
 
 class Fraqueza (models.Model):
     nome = models.ForeignKey('Tipo',on_delete=models.PROTECT)
-    temp = str(nome)
 
     def __str__(self):
         return self.nome.nome
