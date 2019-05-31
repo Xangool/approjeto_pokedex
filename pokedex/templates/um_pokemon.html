@@ -4,15 +4,39 @@
 
 </h5>
 
+<div class="row">
+<div class="col-md-4">
+    <div class="card text-black bg-primary mb-3" align="center">
+            <div class="card-body" align="left">
+                <h3 class="card-title text-white" align="">
+                    <b>
+                        {{um_pokemon.nome}}
+                    </b>
+                </h3>
+                <h3>
+                </h3>
+            </div>
+            <img src="{{ um_pokemon.imagem.url }}" height="250" width="250">
+        </a>
+    </div>
+</div>
+</div>
+
 
 <div class="card" style="width: 18rem;">
-  <img src="{{um_pokemon.imagem.url}}" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{ um_pokemon.nome }}</h5>
-    <p class="card-text"> {{um_pokemon.altura}}</p>
+    <h5 class="card-title">Nome = {{ um_pokemon.nome }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Categoria = {{ um_pokemon.fk_categoria }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Peso = {{ um_pokemon.peso }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Peso = {{ um_pokemon.peso }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Altura = {{ um_pokemon.altura }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">HP = {{ um_pokemon.hp }}</h6>
+    <p class="card-text"></p>
+
     <a href="{% url 'pokedex:todos_pokemons' %}">
-    <button type="button" class="btn btn-primary">Voltar</button>
+      <button type="button" class="btn btn-outline-primary">Voltar</button>
     </a>
   </div>
 </div>
+
 {% endblock %}
